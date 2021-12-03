@@ -999,4 +999,98 @@ const input = [
     "010010110011",
     "000111110010",
     "111100110011",
-]
+];
+
+const bitsObj = {
+    1: {
+        zero: 0,
+        one: 0
+    },
+    2: {
+        zero: 0,
+        one: 0
+    },
+    3: {
+        zero: 0,
+        one: 0
+    },
+    4: {
+        zero: 0,
+        one: 0
+    },
+    5: {
+        zero: 0,
+        one: 0
+    },
+    6: {
+        zero: 0,
+        one: 0
+    },
+    7: {
+        zero: 0,
+        one: 0
+    },
+    8: {
+        zero: 0,
+        one: 0
+    },
+    9: {
+        zero: 0,
+        one: 0
+    },
+    10: {
+        zero: 0,
+        one: 0
+    },
+    11: {
+        zero: 0,
+        one: 0
+    },
+    12: {
+        zero: 0,
+        one: 0
+    }
+}
+
+//function for popular number
+const popularNumber = (array, index) => {  
+    const numsBreakdown = array.reduce((acc,elem)=> {
+        const chars = elem.split("");
+        ++acc[chars[index]];
+        return acc;
+    },{zero:0, one:0});
+
+    if(numsBreakdown.zero > numsBreakdown.one){
+        return 0;
+    }else {
+        return 1;
+    }
+}
+//unpopular number key difference is in equality 0 wins
+const unpopularNumber = (array, index) => {  
+    const numsBreakdown = array.reduce((acc,elem)=> {
+        const chars = elem.split("");
+        ++acc[chars[index]];
+        return acc;
+    },{zero:0, one:0});
+
+    if(numsBreakdown.zero >= numsBreakdown.one){
+        return 0;
+    }else {
+        return 1;
+    }
+}
+
+//pass in an array, a bit value, and a portion of the array
+const filterArray = (array, bit, index) => {
+    return array.filter((elem) => {
+        const chars = elem.split("");
+        if(parseInt(chars[index]) === bit){
+            return elem;
+        }
+    })
+}
+
+for(let i = 0; i < 12; i++){
+
+}
